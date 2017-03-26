@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/home"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/home" />
+
+        <item
+            android:id="@+id/sis"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/sis" />
+
+        <item
+            android:id="@+id/cr"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/cr" />
+
+        <item
+            android:id="@+id/ap"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/ap" />
+
+
+        <item
+            android:id="@+id/info"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/info" />
+        <item
+            android:id="@+id/oi"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/oi" />
+        <item
+            android:id="@+id/ean"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/ean" />
+        <item
+            android:id="@+id/lad"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/lad" />
+        <item
+            android:id="@+id/lpma"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/lpma" />
+        <item
+            android:id="@+id/connect"
+            android:checked="false"
+            android:icon="@drawable/ic_3d_rotation_black_24dp"
+            android:title="@string/connect" />
+
+    </group>
+</menu>

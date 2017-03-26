@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "766830861343",
+    "firebase_url": "https://materialtabs-master.firebaseio.com",
+    "project_id": "materialtabs-master",
+    "storage_bucket": "materialtabs-master.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766830861343:android:2a1b76cd8bddeb46",
+        "android_client_info": {
+          "package_name": "info.androidhive.materialtabs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766830861343-7roeku8c7n4m4hv0rrgbnmohcvvkmdne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "info.androidhive.materialtabs",
+            "certificate_hash": "d3b13f59476b4618fbf4b6fe2461d97366ed0c2d"
+          }
+        },
+        {
+          "client_id": "766830861343-esu2i5psbi9t5c05gjpkfpcltvmncdmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiKpY-kkhnhL8ajcTMy0Y4cELAsWDpZ7k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766830861343-esu2i5psbi9t5c05gjpkfpcltvmncdmj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
