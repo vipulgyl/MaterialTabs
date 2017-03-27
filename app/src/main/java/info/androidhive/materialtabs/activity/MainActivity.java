@@ -19,6 +19,7 @@ import info.androidhive.materialtabs.R;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         checkInternet();
         isStoragePermissionGranted();
+        firebase();
     }
     @Override
     protected void onRestart() {
@@ -308,6 +310,16 @@ public class MainActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Internet Not Available", Toast.LENGTH_LONG).show();
         }
+    }
+    public void firebase()
+    {
+        if (getIntent().getExtras() != null) {
+            for (String key : getIntent().getExtras().keySet()) {
+                Object value = getIntent().getExtras().get(key);
+                Log.d("MainActivity", "Key: " + key + " Value: " + value);
+            }
+        }
+
     }
 
 }
