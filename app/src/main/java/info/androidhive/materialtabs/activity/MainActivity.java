@@ -1,6 +1,7 @@
 package info.androidhive.materialtabs.activity;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -12,11 +13,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import info.androidhive.materialtabs.R;
 
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -39,6 +42,7 @@ import info.androidhive.materialtabs.fragments.LearningProgramMobileFragment;
 import info.androidhive.materialtabs.fragments.OtherInitiativesFragment;
 import info.androidhive.materialtabs.fragments.StartupIndiaServicesFragment;
 import info.androidhive.materialtabs.fragments.TwoFragment;
+import info.androidhive.materialtabs.fragments.URLassignment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -54,48 +58,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         checkInternet();
-        isStoragePermissionGranted();
+        getStarted();
         firebase();
     }
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        checkInternet();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        checkInternet();
-    }
-
-    // Checking storage permission
-    public void isStoragePermissionGranted() {
-        if (Build.VERSION.SDK_INT >= 23) {
-            if (checkSelfPermission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                    == PackageManager.PERMISSION_GRANTED) {
-                getStarted();
-            } else {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
-            }
-        } else {
-            getStarted();
-        }
-    }
-    @Override
-    public void onRequestPermissionsResult(int requestCode,String[] permissions,int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(grantResults[0]== PackageManager.PERMISSION_GRANTED){
-            getStarted();
-        }
-        else
-        {
-            Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show();
-            System.exit(0);
-        }
-    }
-
-
     public void getStarted () {
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -199,6 +164,44 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle.syncState();
 
 
+    }
+    @Override
+    public void onBackPressed()
+    {
+        DrawerLayout layout=(DrawerLayout)findViewById(R.id.drawer_layout);
+        if(layout.isDrawerOpen(GravityCompat.START)){
+            layout.closeDrawer(GravityCompat.START);
+        }
+        else
+            if(viewPager.getCurrentItem()>0)
+            {
+                viewPager.setCurrentItem(0,true);
+            }
+            else
+                if(viewPager.getCurrentItem()==0)
+                {
+                    AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle(R.string.app_name);
+                    builder.setIcon(R.mipmap.ic_launcher);
+                    builder.setMessage("Do you want to exit?")
+                            .setCancelable(false)
+                            .setPositiveButton("Yes",new DialogInterface.OnClickListener(){
+                                public  void onClick(DialogInterface dialog, int id){
+                                    finish();
+                                }
+                            })
+                            .setNegativeButton("No", new DialogInterface.OnClickListener(){
+                                public void onClick(DialogInterface dialog, int id){
+                                    dialog.cancel();
+                                }
+                            });
+                    AlertDialog alert=builder.create();
+                    alert.show();
+
+                }
+        else{
+            super.onBackPressed();
+        }
     }
 
     @Override
@@ -308,7 +311,7 @@ public class MainActivity extends AppCompatActivity {
         }
         else
         {
-            Toast.makeText(this, "Internet Not Available", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Check your Internet Connection", Toast.LENGTH_LONG).show();
         }
     }
     public void firebase()
@@ -319,7 +322,5 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("MainActivity", "Key: " + key + " Value: " + value);
             }
         }
-
     }
-
 }

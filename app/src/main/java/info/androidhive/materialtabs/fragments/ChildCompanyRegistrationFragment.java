@@ -1,16 +1,23 @@
 package info.androidhive.materialtabs.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.MimeTypeMap;
+import android.webkit.URLUtil;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
+
+import java.io.File;
 
 import info.androidhive.materialtabs.R;
 
@@ -87,5 +94,46 @@ public class ChildCompanyRegistrationFragment extends Fragment implements View.O
         ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         ft.commit();
         chk=1;
+
+
+        String myurl=null;
+        if(URLassignment.getCheckURL()==1)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/inc-1/Form_INC-1_help.pdf";
+        else if(URLassignment.getCheckURL()==2)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/inc-7/Form_INC-7_help.pdf";
+        else if(URLassignment.getCheckURL()==3)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/inc-7/Form_INC-7_help.pdf";
+        else if(URLassignment.getCheckURL()==4)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/DIR-12/Form_DIR-12_help.pdf";
+        else{}
+        String nameOfFile= URLUtil.guessFileName(myurl,null, MimeTypeMap.getFileExtensionFromUrl(myurl));
+        File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ "/"+nameOfFile);
+        if(f.exists())
+        {
+            URLassignment.setCheckForm(1);
+        }
+        else
+        {
+            URLassignment.setCheckForm(0);
+        }
+        if(URLassignment.getCheckURL()==1)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/inc-1/Form_INC-1_help.pdf";
+        else if(URLassignment.getCheckURL()==2)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/inc-7/Form_INC-7_help.pdf";
+        else if(URLassignment.getCheckURL()==3)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/inc-7/Form_INC-7_help.pdf";
+        else if(URLassignment.getCheckURL()==4)
+            myurl="https://raw.githubusercontent.com/techfreakworm/startupIndiaAppForms/master/DIR-12/Form_DIR-12_help.pdf";
+        else{}
+        nameOfFile= URLUtil.guessFileName(myurl,null, MimeTypeMap.getFileExtensionFromUrl(myurl));
+        f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ "/"+nameOfFile);
+        if(f.exists())
+        {
+            URLassignment.setCheckHelp(1);
+        }
+        else
+        {
+            URLassignment.setCheckHelp(0);
+        }
     }
 }
