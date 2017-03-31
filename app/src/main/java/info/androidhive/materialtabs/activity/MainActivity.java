@@ -139,6 +139,55 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Change title in toolbar while sliding the tabs
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener(){
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                switch (tab.getPosition()){
+                    case 0:
+                        toolbar.setTitle("Home");
+                        break;
+                    case 1:
+                        toolbar.setTitle("StartUp India Services");
+                        break;
+                    case 2:
+                        toolbar.setTitle("Company Registration");
+                        break;
+                    case 3:
+                        toolbar.setTitle("Action Plan");
+                        break;
+                    case 4:
+                        toolbar.setTitle("Information");
+                        break;
+                    case 5:
+                        toolbar.setTitle("Other Initiatives");
+                        break;
+                    case 6:
+                        toolbar.setTitle("Events and News");
+                        break;
+                    case 7:
+                        toolbar.setTitle("Learning & Development");
+                        break;
+                    case 8:
+                        toolbar.setTitle("Learning Program App");
+                        break;
+                    case 9:
+                        toolbar.setTitle("Connect");
+                        break;
+                }
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         // Initializing Drawer Layout and ActionBarToggle
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.openDrawer, R.string.closeDrawer) {
