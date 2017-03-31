@@ -145,33 +145,43 @@ public class MainActivity extends AppCompatActivity {
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()){
                     case 0:
+                        viewPager.setCurrentItem(0);
                         toolbar.setTitle("Home");
                         break;
                     case 1:
+                        viewPager.setCurrentItem(1);
                         toolbar.setTitle("StartUp India Services");
                         break;
                     case 2:
+                        viewPager.setCurrentItem(2);
                         toolbar.setTitle("Company Registration");
                         break;
                     case 3:
+                        viewPager.setCurrentItem(2);
                         toolbar.setTitle("Action Plan");
                         break;
                     case 4:
+                        viewPager.setCurrentItem(4);
                         toolbar.setTitle("Information");
                         break;
                     case 5:
+                        viewPager.setCurrentItem(5);
                         toolbar.setTitle("Other Initiatives");
                         break;
                     case 6:
+                        viewPager.setCurrentItem(6);
                         toolbar.setTitle("Events and News");
                         break;
                     case 7:
+                        viewPager.setCurrentItem(7);
                         toolbar.setTitle("Learning & Development");
                         break;
                     case 8:
+                        viewPager.setCurrentItem(8);
                         toolbar.setTitle("Learning Program App");
                         break;
                     case 9:
+                        viewPager.setCurrentItem(9);
                         toolbar.setTitle("Connect");
                         break;
                 }
