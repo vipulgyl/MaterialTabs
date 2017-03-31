@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/cardBackground">
 
 <android.support.v7.widget.Toolbar
     android:collapseContentDescription="yes"
@@ -41,14 +42,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="List of Incubators"
                 android:textSize="12dp" />
 
@@ -66,14 +67,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="Guidelines for usage of Startup India logo"
                 android:textSize="12dp" />
 
@@ -91,14 +92,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info3"
                 android:textSize="12dp" />
 
@@ -116,14 +117,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info4"
                 android:textSize="12dp" />
 
@@ -141,14 +142,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info5"
                 android:textSize="12dp" />
 
@@ -166,14 +167,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info6"
                 android:textSize="12dp" />
 
@@ -191,14 +192,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info7"
                 android:textSize="12dp" />
 
@@ -216,14 +217,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info8"
                 android:textSize="12dp" />
 
@@ -241,14 +242,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info9"
                 android:textSize="12dp" />
 
@@ -266,14 +267,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="@string/info10"
                 android:textSize="12dp" />
 

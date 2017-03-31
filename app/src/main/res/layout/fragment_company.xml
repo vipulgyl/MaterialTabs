@@ -19,5 +19,6 @@
         android:entries="@array/incorporation"
         android:id="@+id/spin1"
         android:layout_toRightOf="@+id/tv1"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="10dp"
+        android:background="@drawable/spin"/>
 </RelativeLayout>

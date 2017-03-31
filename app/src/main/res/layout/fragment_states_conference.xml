@@ -5,6 +5,7 @@
     android:layout_height="fill_parent"
     android:fillViewport="true"
     android:scrollbars = "vertical"
+    android:background="@color/cardBackground"
     android:scrollbarStyle="insideInset">
 
     <LinearLayout
@@ -25,14 +26,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="Summary of Startup India State Conference"
                 android:textSize="12dp" />
 
@@ -50,15 +51,15 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
-                android:text="Gujrat in the States' Conference"
+                android:textColor="@color/cardText"
+                android:text="Gujarat in the States' Conference"
                 android:textSize="12dp" />
 
         </android.support.v7.widget.CardView>
@@ -75,14 +76,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="Karnataka in the States' Conference"
                 android:textSize="12dp" />
 
@@ -100,14 +101,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="Kerala in the States' Conference"
                 android:textSize="12dp" />
 
@@ -125,14 +126,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="Rajasthan in the States' Conference"
                 android:textSize="12dp" />
 
@@ -150,14 +151,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="Telangana in the States' Conference"
                 android:textSize="12dp" />
 
@@ -175,14 +176,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="SIDBI in the States' Conference"
                 android:textSize="12dp" />
 
@@ -200,14 +201,14 @@
             android:layout_marginRight="7dp"
             card_view:cardCornerRadius="20dp"
             card_view:contentPadding="10dp"
-            card_view:cardBackgroundColor="#000000">
+            card_view:cardBackgroundColor="@color/cardColor">
 
             <TextView
                 android:id="@+id/tv8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:textColor="#ffffff"
+                android:textColor="@color/cardText"
                 android:text="To watch the other panel discussions -visit the url"
                 android:textSize="12dp" />
 

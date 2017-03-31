@@ -20,6 +20,7 @@
         android:entries="@array/company"
         android:layout_marginTop="33dp"
         android:id="@+id/spin"
+        android:background="@drawable/spin"
         android:layout_alignParentRight="true"/>
    <FrameLayout
         android:layout_width="wrap_content"
