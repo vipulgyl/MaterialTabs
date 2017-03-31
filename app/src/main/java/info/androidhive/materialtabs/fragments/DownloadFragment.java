@@ -93,11 +93,13 @@ public class DownloadFragment extends Fragment {
                 File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ "/"+nameOfFile);
                 if(f.exists())
                 {
+                    chk=1;
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setDataAndType(Uri.fromFile(f),"application/pdf");
                     startActivity(intent);
                 }
                 else {
+                    chk=0;
                     checkInternet();
                     if (net == true) {
                         isStoragePermissionGranted();
@@ -138,17 +140,18 @@ public class DownloadFragment extends Fragment {
                 File f = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)+ "/"+nameOfFile);
                 if(f.exists())
                 {
+                    chk=1;
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setDataAndType(Uri.fromFile(f),"application/pdf");
                     startActivity(intent);
                 }
                 else {
+                    chk=0;
                     checkInternet();
                     if (net == true) {
                         isStoragePermissionGranted();
                         if (URLassignment.isStoragePermission() == true) {
                             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(myurl));
-                            request.setTitle("File Download");
                             request.setDescription("File is being Downloaded..");
                             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
                             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, nameOfFile);
@@ -203,9 +206,8 @@ public class DownloadFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (URLassignment.isStoragePermission() == true) {
+        if (URLassignment.isStoragePermission() == true && chk==0) {
             DownloadManager.Request request = new DownloadManager.Request(Uri.parse(myurl));
-            request.setTitle("File Download");
             request.setDescription("File is being Downloaded..");
             request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, nameOfFile);
