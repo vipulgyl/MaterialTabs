@@ -1,5 +1,7 @@
 package info.androidhive.materialtabs.fragments;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -7,8 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Toast;
 
 import info.androidhive.materialtabs.R;
+
+import static info.androidhive.materialtabs.fragments.DownloadFragment.net;
 
 
 public class LearningAndDevelopmentFragment extends Fragment{
@@ -31,7 +36,17 @@ public class LearningAndDevelopmentFragment extends Fragment{
         browser = (WebView) view.findViewById(R.id.webView);
         browser.getSettings().setJavaScriptEnabled(true);
         browser.setWebViewClient(new WebViewClient());
-        browser.loadUrl("http://www.startupindia.gov.in/learning-development");
+
+        ConnectivityManager cManager = (ConnectivityManager) getActivity().getSystemService(getActivity().CONNECTIVITY_SERVICE);
+        NetworkInfo nInfo = cManager.getActiveNetworkInfo();
+        if (nInfo != null && (nInfo.isConnected())) {
+            net = true;
+            browser.loadUrl("http://www.startupindia.gov.in/learning-development");
+        }
+        else {
+            net=false;
+            Toast.makeText(getActivity(), "Check your Internet Connection", Toast.LENGTH_SHORT).show();
+        }
 
         return view;
     }

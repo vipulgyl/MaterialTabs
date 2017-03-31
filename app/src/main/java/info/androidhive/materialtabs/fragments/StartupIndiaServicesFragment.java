@@ -1,6 +1,8 @@
 package info.androidhive.materialtabs.fragments;
 
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
@@ -11,6 +13,8 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import info.androidhive.materialtabs.R;
+
+import static info.androidhive.materialtabs.fragments.DownloadFragment.net;
 
 
 public class StartupIndiaServicesFragment extends Fragment{
@@ -48,10 +52,18 @@ public class StartupIndiaServicesFragment extends Fragment{
         next2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getActivity(), "Web_View displaying webpages", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getActivity(), WebViewActivity.class);
-                urla.setId(v.getId());
-                startActivity(intent);
+                ConnectivityManager cManager = (ConnectivityManager) getActivity().getSystemService(getActivity().CONNECTIVITY_SERVICE);
+                NetworkInfo nInfo = cManager.getActiveNetworkInfo();
+                if (nInfo != null && (nInfo.isConnected())) {
+                    net = true;
+                    Toast.makeText(getActivity(), "Web_View displaying webpages", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getActivity(), WebViewActivity.class);
+                    urla.setId(v.getId());
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(getActivity(), "Check your Internet Connection", Toast.LENGTH_SHORT).show();
+                    net = false;
+                }
             }
         });
         next3.setOnClickListener(new View.OnClickListener() {
